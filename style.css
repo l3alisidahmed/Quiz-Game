@@ -150,9 +150,9 @@ button#open-popup {
     display: flex;
     justify-content:center ;
     align-items: center;
-    margin-left: 500px;
     overflow: hidden; 
     transition: transform .5s ease , height .2s ease;
+    transform: translate(115% ,13%);
     
 } 
 .wrapper.active-popup{
@@ -160,7 +160,7 @@ button#open-popup {
 }
 
 .wrapper.active {
-    height: 520px;
+    height: 490px;
 }
 
 
@@ -315,6 +315,12 @@ button#open-popup {
     filter: drop-shadow(0 0 5px black);
 }
 
+
+@media screen and (min-width: 768px){
+    
+
+    
+}
 
 
 
