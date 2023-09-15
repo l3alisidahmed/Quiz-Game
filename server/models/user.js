@@ -15,7 +15,13 @@ const appSchema = new schema({
     password: {
         type: String,
         required: true
+    },
+
+    Rank: {
+        type: Number,
+        default: 0
     }
+
 }, {timestamps:true});
 
 const User = mongoose.model('auth', appSchema);
