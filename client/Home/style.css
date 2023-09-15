@@ -19,26 +19,25 @@ body{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-   
 }
+
+/* i added this */
+
+.header div {
+    display: flex;
+    align-items: center;
+}
+
 .game{
     font-size: 30px;
     color: white;
     text-decoration: none;
     font-weight: 700;
-    filter: drop-shadow(0 0 5px black);
-    
-    
+    filter: drop-shadow(0 0 5px white);
 }
 .logo{
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 70px;
     height: 60px;
-    margin-left: 315px;
-    margin-bottom: 40px;
-    margin-top: 7px;
 }
 .nav a {
     font-size: 18px;
@@ -75,7 +74,7 @@ body{
     font-size: 74px;
     font-weight: 700;
     text-shadow: 0 0 10px rgba(0 ,0 ,0, .3);
-    filter: drop-shadow(0 0 5PX black);
+    filter: drop-shadow(0 0 5PX white);
     margin-bottom: 30px;
 
 }
@@ -97,7 +96,7 @@ body{
     
 } 
 .button .btn:hover {
-    background: black;
+    background: white;
     box-shadow: none;
    
 }
@@ -215,7 +214,7 @@ button#open-popup {
     font-size: 2em;
     color:#fff;
     text-align: center; 
-    filter: drop-shadow(0 0 5px black);
+    filter: drop-shadow(0 0 5px white);
 }
 .input-box {
     position: relative;
@@ -312,7 +311,7 @@ button#open-popup {
     font-size: 2em;
     color:#fff;
     text-align: center; 
-    filter: drop-shadow(0 0 5px black);
+    filter: drop-shadow(0 0 5px white);
 }
 
 

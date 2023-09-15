@@ -4,6 +4,8 @@ const cors = require('cors');
 const app = express();
 const Question = require('./models/questions');
 
+app.use(express.json());
+
 // connect to mongodb
 const dbURI = "mongodb+srv://SidAhmed:123@cluster0.claucrs.mongodb.net/Quiz_Game?retryWrites=true&w=majority"
 
@@ -25,6 +27,7 @@ function getRandomInt(min, max) {
 
 app.use(cors());
 
+// get all questions
 app.get('/', async (req, res) => {
     try {
         const result = await Question.find();
@@ -39,6 +42,7 @@ app.get('/', async (req, res) => {
     }
 });
 
+// get questions with id
 app.get('/api/v1/questions/:id', async (req, res) => {
     try {
         const id = req.params.id;
@@ -52,6 +56,7 @@ app.get('/api/v1/questions/:id', async (req, res) => {
     }
 });
 
+// get questions with category
 app.get('/api/v1/questions/category/:category', async (req, res) => {
     try {
         const category = req.params.category;
@@ -72,16 +77,62 @@ app.get('/api/v1/questions/category/:category', async (req, res) => {
     }
 });
 
-app.get('/match', async (req, res) => {
+// get random questions
+app.get('/match/:category', async (req, res) => {
     try {
-        const questions = await Question.find()
-        const randomInt = getRandomInt(0, 350); // Generates a random integer between 1 (inclusive) and 11 (exclusive)
-        const question = questions[randomInt];
+        let arr = [];
+        const category = req.params.category;
+        const questions = await Question.find();
+        if (category === "Random") {
+            for (let index = 0; index < 5; index++) {
+                const randomInt = getRandomInt(0, 350); // Generates a random integer between 1 (inclusive) and 11 (exclusive)
+                const element = questions[randomInt];
+                arr.push(element)
+            }
+        } else {
+            let result = [];
+            for (let index = 0; index < questions.length; index++) {
+                const element = questions[index];
+                if (element.category === category) {
+                    result.push(element); 
+                }
+            }
+            for (let index = 0; index < 5; index++) {
+                const randomInt = getRandomInt(0, result.length); // Generates a random integer between 1 (inclusive) and 11 (exclusive)
+                const element = result[randomInt];
+                arr.push(element); 
+            }
+        }
         res.send({
             success: true,
-            question
+            question: arr
         });
     } catch (error) {
         console.log(error.message);
     }
+});
+
+// update questions
+app.put('/', async (req, res) => {
+    let arr = [];
+    const { cate, newCategory } = req.body;
+    const questions = await Question.find();
+    questions.forEach(element => {
+        if (element.category === cate) {
+            console.log(element);
+            const id = element._id;
+            
+            Question.findByIdAndUpdate(id, {category: newCategory},{new: true})
+            .then((updatedUser) => {
+                if (!updatedUser) {
+                console.log('User not found.');
+                } else {
+                console.log('Updated user:', updatedUser);
+                }
+            })
+            .catch((err) => {
+                console.error('Error updating user:', err);
+            });
+        }
+    });
 });
