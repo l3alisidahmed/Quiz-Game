@@ -24,5 +24,5 @@ const appSchema = new schema({
 
 }, {timestamps:true});
 
-const User = mongoose.model('auth', appSchema);
+const User = mongoose.model('User', appSchema);
 module.exports= User;

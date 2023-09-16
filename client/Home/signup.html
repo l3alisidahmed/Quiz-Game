@@ -29,13 +29,13 @@
             <form action="#">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" required>
+                    <input class="email" type="email" required>
                     <label >Email</label>
 
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required>
+                    <input class="pass" type="password" required>
                     <label >Password</label>
                     <a href="#">Forgot password?</a>
 
@@ -44,7 +44,7 @@
                     <label ><input type="checkbox">Remember me</label>
                     
                 </div>
-                <button type="submit" class="btnlogin">Login</button>
+                <button type="submit" class="btnlogin login">Login</button>
                 <div class="login-register">
                     <p> Don't have an account?<a href="#" class="register-link">  Register</a></p>
                 </div>
@@ -57,19 +57,19 @@
             <form action="#">
                  <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
-                    <input type="text" required>
+                    <input id="user-name" type="text" required>
                     <label >Username</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" required>
+                    <input id="email" type="email" required>
                     <label >Email</label>
                 </div>
 
                
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required>
+                    <input id="pass" type="password" required>
                     <label >Password</label>
 
                 </div>
@@ -77,7 +77,7 @@
                     <label ><input type="checkbox"> I agree to the terms & conditions</label>
                     
                 </div>
-                <button type="submit" class="btnlogin">Register</button>
+                <button type="submit" class="btnlogin siginup">Register</button>
                 <div class="login-register">
                     <p> already have an account?<a href="#" class="Login-link">  Login </a></p>
                 </div>
@@ -87,6 +87,8 @@
 
     </div>
     <script src="script.js"></script>
+    <script src="siginup.js"></script>
+    <script src="login.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
