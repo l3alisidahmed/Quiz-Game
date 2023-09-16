@@ -4,7 +4,12 @@
     box-sizing: border-box;
 }
 
-body {
+body { 
+    background-image: url(./background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 100vh;
     /* background-color: blanchedalmond; */
@@ -13,6 +18,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .nav-bar {
@@ -29,19 +35,27 @@ body {
     flex-direction: row;
     align-items: center;
 }
+.logo h2{
+    font-size: 30px;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px black);
+    color: white;
+}
 
 .profile-img {
     width: 40px;
     height: 40px;
-    background-color: brown;
+    background-color:#162938;
     /* background-image: url("../../../../../Posts/client/images/Dreamy\ Anime\ Lo\ Fi\ Girl\ at\ laptop\ Wallpaper\ Iphone.jpeg"); */
     /* background-size: cover; */
     border-radius: 50%;
 }
 
 .profile-name {
+    color: white;
     font-size: 20px;
     font-weight: bold;
+    filter: drop-shadow(0 0 5px black);
 }
 
 .logo span {
@@ -64,6 +78,7 @@ body {
     text-align: center;
     font-size: 24px;
     width: 70%;
+    color: white;
 }
 
 .categories {
@@ -73,6 +88,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 25px;
+    
 }
 
 #cat {
@@ -81,13 +97,14 @@ body {
     color: white;
     width: 240px;
     height: 250px;
-    background-color: cadetblue;
+    background-color: #162938;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     gap: 10px;
+    margin-top: 40px;
 }
 
 #cat p {
@@ -98,9 +115,10 @@ body {
     font-size: 20px;
     color: white;
     padding: 15px 40px;
-    background-color: brown;
+    background-color: #c40094;
     border-radius: 50px;
     border: none;
+   margin-top: 30px;
 }
 
 #cat .icons {

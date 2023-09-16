@@ -79,7 +79,7 @@ fetch(`http://localhost:3000/match/${category}`)
                                 
                                 if (i === 4) {
                                     localStorage.setItem('score', rank);
-                                    location.href = "../quiz game/game.html";
+                                    location.href = "../Result Page/game.html";
                                 }
                             })
                             .catch(err => err.message);
