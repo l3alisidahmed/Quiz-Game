@@ -51,7 +51,26 @@ const loginUser = async (req, res) => {
     }
   }
 
+const getUserById = async (req, res) => {
+  const id = req.params.id;
+
+    try {
+        const user = await User.findById(id);
+  
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      
+      const { _id, user_name } = user;
+      res.status(200).json({ _id, user_name });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+}
+
 module.exports = {
     signinUser,
-    loginUser
+    loginUser,
+    getUserById
 }

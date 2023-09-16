@@ -18,17 +18,15 @@
         <!-- computer -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+        <link rel="stylesheet" href="game.css">
     <title>Quiz game</title>
-    <link rel="stylesheet" href="game.css">
 </head>
 
 <body>
     <div class="nav-bar">
-        <div class="logo">
-            <span class="material-symbols-outlined">
-                smart_toy
-            </span>
-            <h2>Qiuz Game</h2>
+        <div class="left">
+            <a href="#" class="game"> QUIZ GAME</a>
+            <img src="../Home/logoo.png" alt="Logo" class="logo">
         </div>
         <div class="profile">
             <div class="profile-img"></div>
@@ -49,7 +47,7 @@
 
             </div>
             <div class="result2">
-                <h6>Category: Web Design</h6>
+                <h6 class="category-type" ></h6>
                 <h3>You answered</h3>
                 <h1 id="score">5/5</h1>
                 <h3>Qestion correct</h3>
@@ -70,6 +68,8 @@
 
     </div>
     <script src="./script.js"></script>
+    <script src="../Start/script.js"></script>
+    <script src="../category/userName.js"></script>
 </body>
 
 </html>

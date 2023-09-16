@@ -10,12 +10,31 @@ body{
     flex-direction: row;
     justify-content: space-between;
 }
-.logo,
+.left,
 .profile {
     gap: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left .game {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px black);
+}
+
+.left .logo {
+    width: 70px;
+    height: 60px;
 }
 
 .profile-img {
@@ -34,17 +53,6 @@ body{
     color: white;
     text-decoration: none;
    
-    filter: drop-shadow(0 0 5px black);
-}
-
-.logo span {
-    font-size: 50px;
-}
-.logo h2{
-    font-size: 30px;
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
     filter: drop-shadow(0 0 5px black);
 }
 

@@ -16,7 +16,7 @@ const getQuestion = (i, data) => {
     const { _id, question, category, correct_answer, incorrect_answers } = data.question[i];
     
     localStorage.setItem('id', _id);
-    categoryType.innerHTML = category;
+    categoryType.innerHTML = `Category: ${category}`;
     nbr.innerHTML = `${i+1}/5`;
     myQuestion.innerHTML = question;
     choice.innerHTML = addChoice(correct_answer);
@@ -57,6 +57,10 @@ fetch(`http://localhost:3000/match/${category}`)
                 });
             });
         btn.onclick = () => {
+            if (i === 4) {
+                localStorage.setItem('score', rank);
+                location.href = "../Result Page/game.html";
+            }
             if (i < 5) {
                 i++;
                 getQuestion(i, data);
@@ -77,13 +81,9 @@ fetch(`http://localhost:3000/match/${category}`)
                                     console.log(rank);
                                 }
                                 
-                                if (i === 4) {
-                                    localStorage.setItem('score', rank);
-                                    location.href = "../Result Page/game.html";
-                                }
                             })
                             .catch(err => err.message);
-                    });
+                        });
                 });
             }
         }

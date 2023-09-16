@@ -15,10 +15,10 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     });
 });
 
-app.use(express.json());
 app.use(cors());
-app.use(express.urlencoded({ extended: false })); 
+app.use(express.json());
 
 app.use('', questionRouter, userRoute);
 app.use('/api/v1/questions', questionRouter);
 app.use('/api/v1/questions', questionRouter);
+app.use(express.urlencoded({ extended: false })); 
